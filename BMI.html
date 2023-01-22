@@ -62,8 +62,10 @@
 
             
             var bmi = p / (a ^ 2);
-            bmi = bmi.toFixed(3);
-            console.log(bmi);
+            if((bmi%1)>0){
+                bmi = bmi.toFixed(3);
+            }
+            
             
             if (bmi < 16 && bmi > 1) {
                 result.style = "color: red";
@@ -79,18 +81,19 @@
                 result.innerHTML = "Seu valor BMI é igual a " + bmi + "; Você está com BMI bom, Saudavel";
             } else if (bmi < 30 && bmi >= 25) {
 
-                result.style = "color: rgb(202, 253, 99)";
+                result.style = "color: rgb(202, 253, 99); background:black;";
+
                 result.innerHTML = "Seu valor BMI é igual a " + bmi + "; Você está com BMI um pouco alto, sobrepeso";
             } else if (bmi < 35 && bmi >= 30) {
 
                 result.style = "orange";
                 result.innerHTML = "Seu valor BMI é igual a " + bmi + "; Você está com BMI alto, obsidade moderada";
-            } else if (bmi >= 35 && bmi > 100) {
+            } else if (bmi >= 35) {
 
-                result.style = "color: rgb(255, 30, 30)";
+                result.style = "color: rgb(255, 30, 30); background:#100d12;";
                 result.innerHTML = "Seu valor BMI é igual a " + bmi + "; Você está com BMI um pouco alto, sobrepeso";
             } else {
-                window.alert('Erro');
+                window.alert('Erro'+bmi);
             }
         }
     </script>

@@ -1,2 +1,2 @@
-# solid-adventure
-Esse é um novo repositório
+# BMI
+UM projeto de site que calcula o BMI de uma pessoa e classifica o resultado.
