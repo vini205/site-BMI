@@ -1,6 +1,54 @@
-@media screen and (max-width:600px) {
+:root{
+    --muitoBaixo: red;
+    --baixo:purple;
+    --bom:green;
+    --alto: rgb(202, 253, 99);
+    --poucoAlto: orange;
+    --muitoAlto:  rgb(255, 30, 30);
+    /*bakgrounds*/
+    --poucoAltob: #000000;
+    --altob:black;
+    --muitoAltob:#100d12;
+
+}
+.error{
+    background-color: white;
+    color: black;
+    font-style: oblique;
+    margin: 20px;
+}
+div.muitoBaixo{
+    color: var(--muitoBaixo);
+}
+div.baixo{
+    color: var(baixo);
+}
+div.bom{
+    color:var(--bom)
+}
+div.alto{
+    color: var(--alto);
+    background-color: var(--altob);
+}
+div.poucoAlto{
+    color: var(--poucoAlto);
+    background-color: var(--poucoAltob);
+}
+div.muitoAlto{
+    color: var(--muitoAlto);
+    background-color: var(--muitoAltob);
+}
+@media screen and (max-width:950px) {
     div.container{
         flex-direction: column;
+    }
+    input{
+        width: 70%;
+        height: 30px;
+    }
+    div.div.btn{
+        height: 60px;
+        
     }
 }
 body{
@@ -10,30 +58,51 @@ body{
     display: flex;
     justify-content: space-around;
 }
-.div{
+div.div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-transform: capitalize;
     background-color: rgb(100, 100, 255);
     border: solid black 2px;
     margin: 20px 0 20px 0;
     padding: 40px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
 }
-input{
-    padding: 4px;
-    outline: 1px solid;
+.btn{
+    flex-grow: 0.3;
+}
 
+div.div >input{
+    padding: 5px;
+    border: 1px solid;
+    display: block;
+    height: 40px;
+    font-size: 20px;
 }
 button{
     padding: 5px;
+    min-width: 50%;
+    border-radius: 4px;
     background-color: white;
-    transition: background-color 1s;
+    transition: all 0.4s;
+    font-size: 1em;
+    min-height: 70%;
+    box-sizing: content-box;
 }
 button:hover{
-    background-color: black;
-    color: white;
+    background-color: rgb(179, 179, 179);
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    box-shadow: 2px 2px 6px 1px black;
 }
-#result{
-    font-weight: bolder;
+input:focus {
+    border: 3px solid orange;
+    border-radius: 4px;
 }
 .flex{
     display: flex;
@@ -43,23 +112,80 @@ button:hover{
     flex-wrap: wrap;
     align-items: center;
 }
-.links{
-    text-decoration: none;
-    color: rgb(35, 7, 66);
-    border:solid rgb(81, 255, 0);
-    background-color: rgb(175, 175, 175);
-    padding: 3px;
-    margin: 10px 2px 0 2px;
-    text-overflow: clip;
-    overflow: hidden;
-    white-space: pre;
-    border-collapse: collapse;
-    border-top-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+div.result--open{
+    display: block;
 }
-#result{
+.result{
+    display: none;
     background-color: white;
     padding: 20px 5px;
     border-radius: 5px;
-    transition: all 2s;
+    font-weight: bolder;
+    transition: all 1s;
+    margin: 40px 20px;
+}
+
+
+.box{
+    display: flex;
+    padding: 3px;
+    box-sizing: content-box;
+    background-color: white;
+    height: 50px;
+    align-items: center;
+    display: none;
+}
+.metric{
+    /* display:flex; */
+    gap: 0;
+    flex-direction: row;
+    height: 90%;
+    width: 100%;
+    background-image: url('img/ruler.jpg');
+    background-position: 20% 529px;
+    background-repeat-x: no-repeat;
+}
+.metric >div{
+    flex-shrink: 1;
+    flex-grow: 1;
+    opacity: 0.7; 
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+div.p1{
+    background-color: var(--muitoBaixo);
+    /* flex-grow: 0.8; */
+    width: 32%;
+}
+.p2{
+    background-color: var(--baixo);
+    /* flex-grow: 0; */
+    width: 5%;
+}
+.p3{
+    background-color: var(--bom);
+    width: 12%;
+ /*    flex-grow: 1; */
+}
+.p4{
+    background-color: var(--alto);
+    width: 10%;
+}
+.p5{
+    background-color: var(--poucoAlto);
+    width: 10%;
+}
+.p6{
+    background-color: var(--muitoAlto);
+    width: 25%;
+}
+.pointer{
+    
+    background-color: black;
+    position: relative;
+    height: 70px;
+    width: 3px;
+    transition: left 1s;
 }
